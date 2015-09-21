@@ -1,0 +1,2 @@
+muffin
+git+https://github.com/mongodb/motor.git
