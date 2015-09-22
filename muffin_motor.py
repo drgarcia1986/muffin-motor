@@ -18,6 +18,7 @@ class Plugin(BasePlugin):
     defaults = {
         'host': '127.0.0.1',
         'port': 27017,
+        'max_pool_size': None
     }
 
     def __init__(self, *args, **kwargs):
@@ -29,6 +30,7 @@ class Plugin(BasePlugin):
         """ Setup options. """
         super().setup(app)
         self.cfg.port = int(self.cfg.port)
+        self.cfg.max_pool_size = int(self.cfg.max_pool_size)
 
     @asyncio.coroutine
     def start(self, app):
@@ -36,20 +38,20 @@ class Plugin(BasePlugin):
         self.conn = yield from AsyncIOMotorClient(
             host=self.cfg.host,
             port=self.cfg.port,
-            io_loop=app._loop
+            io_loop=app._loop,
+            max_pool_size=self.cfg.max_pool_size
         ).open()
-        self.conn = self.conn.client
 
         return self
 
     @asyncio.coroutine
     def finish(self, app):
         """ Close self connections. """
-        yield from self.conn.disconnect()
+        self.conn.disconnect()
 
     def __getattr__(self, name):
         """ Proxy attributes to self connection. """
-        if not self.conn:
+        if not self.conn.client:
             raise AttributeError('Not connected')
 
-        return getattr(self.conn, name)
+        return getattr(self.conn.client, name)
