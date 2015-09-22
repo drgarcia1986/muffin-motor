@@ -1,4 +1,5 @@
 # Muffin-Motor
+[![Build Status](https://travis-ci.org/drgarcia1986/muffin-motor.svg)](https://travis-ci.org/drgarcia1986/muffin-motor)
 
 Muffin-Motor -- A simple [MOTOR](https://github.com/mongodb/motor) plugin for [muffin framework](https://github.com/klen/muffin).
 
@@ -7,6 +8,7 @@ Muffin-Motor -- A simple [MOTOR](https://github.com/mongodb/motor) plugin for [m
 
 - python >= 3.4
 - muffin >= 0.1.6
+- motor >= 0.5
 
 ## Installation
 
@@ -35,15 +37,14 @@ app = muffin.Application(
 And use *motor* plugin:
 
 ```python
-    @app.register('/example')
-    class Example(muffin.Handler):
+@app.register('/example')
+class Example(muffin.Handler):
 
-        @asyncio.coroutine
-        def get(self, request):
-            collection = app.ps.motor.test
-            doc = yield from collection.find_one({'test': 'foo'})
-            return doc
-
+    @asyncio.coroutine
+    def get(self, request):
+        collection = app.ps.motor.test
+        doc = yield from collection.find_one({'test': 'foo'})
+        return doc
 ```
 ## Bug tracker
 
@@ -57,4 +58,4 @@ Development of Muffin-Motor happens at: https://github.com/drgarcia1986/muffin-m
 
 
 ## Contributors
-* Diego Garcia [github](https://github.com/drgarcia1986)
+* [Diego Garcia](https://github.com/drgarcia1986)
