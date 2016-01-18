@@ -9,10 +9,10 @@ cache:
     - $HOME/.cache/pip
 
 install:
-    - pip install -r requirements-test.txt
+    - make requirements
 
-script: 
-    - py.test tests.py
+script:
+    - make test
 
 services:
   - mongodb
