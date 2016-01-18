@@ -1,2 +1,2 @@
-muffin
-git+https://github.com/mongodb/motor.git
+muffin>=0.5.5
+motor>=5.0
