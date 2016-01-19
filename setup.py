@@ -32,7 +32,6 @@ setup(
     author_email='drgarcia1986@gmail.com',
     url='https://github.com/drgarcia1986/muffin-motor',
     classifiers=[
-        'Development Status :: 0.0.1 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',

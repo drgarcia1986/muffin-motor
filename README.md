@@ -6,15 +6,15 @@ Muffin-Motor -- A simple [MOTOR](https://github.com/mongodb/motor) plugin for [m
 
 ## Requirements
 
-- python >= 3.4
-- muffin >= 0.1.6
+- python >= 3.4.1
+- muffin >= 0.5.5
 - motor >= 0.5
 
 ## Installation
 
 **Muffin-Motor** should be installed using pip:
 ```
-pip install git+https://github.com/drgarcia1986/muffin-motor.git
+pip install muffin-motor
 ```
 
 ## Usage
