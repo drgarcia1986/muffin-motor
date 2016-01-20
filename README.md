@@ -46,6 +46,13 @@ class Example(muffin.Handler):
         doc = yield from collection.find_one({'test': 'foo'})
         return doc
 ```
+## Options
+| | |
+|------------|----------------|
+| MOTOR_HOST | Host of mongodb server (`'127.0.0.1'`) |
+| MOTOR_PORT | Port of mongodb server (`27017`) |
+| MOTOR_MAX_POOL_SIZE | Max connection pool size (`1`) |
+
 ## Bug tracker
 
 If you have any suggestions, bug reports or
