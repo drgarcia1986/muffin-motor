@@ -18,7 +18,7 @@ class Plugin(BasePlugin):
     defaults = {
         'host': '127.0.0.1',
         'port': 27017,
-        'max_pool_size': None
+        'max_pool_size': 1
     }
 
     def __init__(self, *args, **kwargs):
