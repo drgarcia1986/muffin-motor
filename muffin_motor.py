@@ -18,7 +18,8 @@ class Plugin(BasePlugin):
     defaults = {
         'host': '127.0.0.1',
         'port': 27017,
-        'max_pool_size': 1
+        'max_pool_size': 1,
+        'db': 'default'
     }
 
     def __init__(self, *args, **kwargs):
@@ -42,6 +43,7 @@ class Plugin(BasePlugin):
             max_pool_size=self.cfg.max_pool_size
         ).open()
 
+        self._db = getattr(self.conn, self.cfg.db)
         return self
 
     @asyncio.coroutine
@@ -51,7 +53,7 @@ class Plugin(BasePlugin):
 
     def __getattr__(self, name):
         """ Proxy attributes to self connection. """
-        if not self.conn.client:
+        if not self.conn:
             raise AttributeError('Not connected')
 
-        return getattr(self.conn.client, name)
+        return getattr(self._db, name)

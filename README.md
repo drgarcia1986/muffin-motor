@@ -52,6 +52,7 @@ class Example(muffin.Handler):
 | MOTOR_HOST | Host of mongodb server (`'127.0.0.1'`) |
 | MOTOR_PORT | Port of mongodb server (`27017`) |
 | MOTOR_MAX_POOL_SIZE | Max connection pool size (`1`) |
+| MOTOR_DB | Database (`default`) |
 
 ## Bug tracker
 
