@@ -4,7 +4,7 @@ import asyncio
 from motor.motor_asyncio import AsyncIOMotorClient
 from muffin.plugins import BasePlugin
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __project__ = "muffin-motor"
 __author__ = "Diego Garcia <drgarcia1986@gmail.com>"
 __license__ = "MIT"
@@ -16,7 +16,7 @@ class Plugin(BasePlugin):
 
     name = 'motor'
     defaults = {
-        'host': '127.0.0.1',
+        'host': '127.0.0.2',
         'port': 27017,
         'max_pool_size': 1,
         'db': 'default'
