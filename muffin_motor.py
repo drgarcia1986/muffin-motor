@@ -16,7 +16,7 @@ class Plugin(BasePlugin):
 
     name = 'motor'
     defaults = {
-        'host': '127.0.0.2',
+        'host': '127.0.0.1',
         'port': 27017,
         'max_pool_size': 1,
         'db': 'default'
