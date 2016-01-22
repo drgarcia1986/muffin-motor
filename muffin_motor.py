@@ -4,7 +4,7 @@ import asyncio
 from motor.motor_asyncio import AsyncIOMotorClient
 from muffin.plugins import BasePlugin
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __project__ = "muffin-motor"
 __author__ = "Diego Garcia <drgarcia1986@gmail.com>"
 __license__ = "MIT"
