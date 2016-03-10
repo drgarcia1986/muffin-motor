@@ -25,4 +25,4 @@ release-major:
 	bumpversion major
 
 sdist:
-	@python setup.py sdist upload
+	@python setup.py sdist bdist_wheel upload
