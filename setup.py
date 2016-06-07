@@ -24,10 +24,9 @@ setup(
     version=_version,
     license=_license,
     description=_read('DESCRIPTION'),
-    long_description=_read('README.md'),
+    long_description=_read('README.rst'),
     platforms=('Any'),
-    keywords = 'asyncio mongo muffin motor'.split(),  # noqa
-
+    keywords = 'asyncio mongo muffin motor'.split(),
     author='Diego Garcia',
     author_email='drgarcia1986@gmail.com',
     url='https://github.com/drgarcia1986/muffin-motor',
