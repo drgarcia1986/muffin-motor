@@ -72,6 +72,7 @@ Options
  *MOTOR_PORT*              Port of mongodb server (``27017``)
  *MOTOR_MAX_POOL_SIZE*     Max connection pool size (``1``)
  *MOTOR_DB*                Database (``default``)
+ *MOTOR_KWARGS*            Others args of client create(``{}``)
 ========================== ==============================================================
 
 .. _bugtracker:

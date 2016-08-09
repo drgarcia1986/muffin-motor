@@ -19,7 +19,8 @@ class Plugin(BasePlugin):
         'host': '127.0.0.1',
         'port': 27017,
         'max_pool_size': 1,
-        'db': 'default'
+        'db': 'default',
+        'kwargs': {}
     }
 
     def __init__(self, *args, **kwargs):
@@ -40,7 +41,8 @@ class Plugin(BasePlugin):
             host=self.cfg.host,
             port=self.cfg.port,
             io_loop=app._loop,
-            max_pool_size=self.cfg.max_pool_size
+            max_pool_size=self.cfg.max_pool_size,
+            **self.cfg.kwargs
         ).open()
 
         self._db = getattr(self.conn, self.cfg.db)

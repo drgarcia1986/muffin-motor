@@ -10,7 +10,8 @@ def app(loop):
         'motor', loop=loop,
 
         PLUGINS=['muffin_motor'],
-        MOTOR_MAX_POOL_SIZE=2
+        MOTOR_MAX_POOL_SIZE=2,
+        MOTOR_KWARGS={'w': 1}
     )
 
     return app
