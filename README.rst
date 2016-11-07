@@ -18,7 +18,7 @@ Requirements
 
 - python >= 3.4.1
 - muffin >= 0.5.5
-- motor >= 0.5
+- motor >= 1.0
 
 .. _installation:
 
