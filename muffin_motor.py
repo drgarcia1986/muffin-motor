@@ -37,21 +37,16 @@ class Plugin(BasePlugin):
     @asyncio.coroutine
     def start(self, app):
         """ Make a connection to mongo. """
-        self.conn = yield from AsyncIOMotorClient(
+        self.conn = AsyncIOMotorClient(
             host=self.cfg.host,
             port=self.cfg.port,
             io_loop=app._loop,
-            max_pool_size=self.cfg.max_pool_size,
+            maxPoolSize=self.cfg.max_pool_size,
             **self.cfg.kwargs
-        ).open()
+        )
 
         self._db = getattr(self.conn, self.cfg.db)
         return self
-
-    @asyncio.coroutine
-    def finish(self, app):
-        """ Close self connections. """
-        self.conn.disconnect()
 
     def __getattr__(self, name):
         """ Proxy attributes to self connection. """

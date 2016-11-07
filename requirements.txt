@@ -1,2 +1,2 @@
 muffin>=0.5.5
-motor>=0.5
+motor>=1.0
