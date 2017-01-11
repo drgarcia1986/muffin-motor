@@ -48,6 +48,11 @@ class Plugin(BasePlugin):
         self._db = getattr(self.conn, self.cfg.db)
         return self
 
+    @asyncio.coroutine
+    def finish(self, app):
+        if self.conn:
+            self.conn.close()
+
     def __getattr__(self, name):
         """ Proxy attributes to self connection. """
         if not self.conn:
